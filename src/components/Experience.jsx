@@ -1,23 +1,23 @@
-export default function Education({ isEditing, formData, setFormData }) {
+import InputField from './InputField';
+
+export default function Experience({ isEditing, formData, setFormData }) {
 	return (
 		<>
 			<h2>Experience</h2>
 			<fieldset>
-				{isEditing ? (
-					<input
-						type='text'
-						placeholder='Your experience...'
-						value={formData.experience}
-						onChange={(e) =>
-							setFormData({
-								...formData,
-								experience: e.target.value,
-							})
-						}
-					/>
-				) : (
-					<p>{formData.experience}</p>
-				)}
+				<InputField
+					isEditing={isEditing}
+					labelHtmlFor='experience'
+					labelTitle='Experience: '
+					inputPlaceholder='Your experience...'
+					inputValue={formData.experience}
+					onChange={(e) =>
+						setFormData({
+							...formData,
+							experience: e.target.value,
+						})
+					}
+				/>
 			</fieldset>
 		</>
 	);

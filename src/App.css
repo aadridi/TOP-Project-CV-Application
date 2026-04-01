@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    margin-top: 20px;;
+}
+
+.app-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+}
+
+form h2 {
+	text-align: center;
+}
+
+form fieldset {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	min-width: 500px;
+	padding: 20px 0px;
+	border: 2px solid black;
+}
+
+button {
+    padding: 0.5em 1em;
+}

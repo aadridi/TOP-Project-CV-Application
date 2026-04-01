@@ -31,27 +31,30 @@ function App() {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
-				<GeneralInfo isEditing={isEditing} formData={formData} setFormData={setFormData} />
-				<Education isEditing={isEditing} formData={formData} setFormData={setFormData} />
-				<Experience isEditing={isEditing} formData={formData} setFormData={setFormData} />
-				{isEditing && (
-					<>
-						<button type='submit' onClick={() => setIsEditing(false)}>
-							Submit
-						</button>
-						<button type='button' onClick={handleReset}>
-							Reset
-						</button>
-					</>
+			<h1>CV GENERATOR</h1>
+			<div className='app-container'>
+				<form onSubmit={handleSubmit}>
+					<GeneralInfo isEditing={isEditing} formData={formData} setFormData={setFormData} />
+					<Education isEditing={isEditing} formData={formData} setFormData={setFormData} />
+					<Experience isEditing={isEditing} formData={formData} setFormData={setFormData} />
+					{isEditing && (
+						<>
+							<button type='submit' onClick={() => setIsEditing(false)}>
+								Submit
+							</button>
+							<button type='button' onClick={handleReset}>
+								Reset
+							</button>
+						</>
+					)}
+				</form>
+				{!isEditing && (
+					<button type='button' onClick={() => setIsEditing(true)}>
+						Edit
+					</button>
 				)}
-			</form>
-			{!isEditing && (
-				<button type='button' onClick={() => setIsEditing(true)}>
-					Edit
-				</button>
-			)}
-			<pre>{JSON.stringify(formData, 2, null)}</pre>
+				<pre>{JSON.stringify(formData, 2, null)}</pre>
+			</div>
 		</>
 	);
 }
